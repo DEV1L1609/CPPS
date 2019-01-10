@@ -3,7 +3,7 @@
 int input(int* a,int *b)
  {
   printf("Enter the two numbers:\n");
-  scanf("%d\n%d\n",*&a,*&b);
+  scanf("%d\n%d",*&a,*&b);
   return 0;
  }
 
