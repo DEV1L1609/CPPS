@@ -22,7 +22,7 @@ int output(int max)
   if(max==0)
     printf("The numbers entered are equal!");
   else
-    printf("The maximum number of the two numbers is:%d\n");
+    printf("The minimum number of the two numbers is:%d\n");
     return 0;
  }
 
