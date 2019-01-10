@@ -14,7 +14,7 @@ int compute(int* a,int* b)
   else if(a==b)
    return 0;
   else 
-   return b;
+   return *b;
  }
  
 int output(int max)
