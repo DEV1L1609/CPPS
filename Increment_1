@@ -15,7 +15,7 @@ int compute(int x)
 
 int output(int a,int n)
  { 
-  printf("%d+1 is %d",a,n);
+  printf("%d+1 is %d\n",a,n);
  }
  
 int main(void)
