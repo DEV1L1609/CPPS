@@ -8,20 +8,28 @@ typedef struct {
 int input(frac* f)
  {
   printf("Enter the numerator of the first fraction");
-  scanf("%d",&f[1].num);
+  scanf("%d",&f[0].num);
   printf("\nEnter the denominator of the first fraction");
-  scanf("%d",&f[1].den);
+  scanf("%d",&f[0].den);
   printf("\nEnter the numerator of the second fraction");
-  scanf("%d",&f[2].num);
+  scanf("%d",&f[1].num);
   printf("\nEnter the denominator of the second fraction");
-  scanf("%d",&f[2].num);
+  scanf("%d",&f[1].den); 
+  return 0;
  }
 
 frac compute(frac* f)
  {
-  frac fm;
-  fm.den = f[1].den*(f[2].den);
-  fm.num = ((f[1].num*(f[2].den))+(f[2].num*(f[1].den)));
+  frac fm = {0,0};
+  int n1,n2,d1,d2;
+  n1 = f[0].num;
+  n2 = f[1].num;
+  d1 = f[0].den;
+  d2 = f[1].den;
+  fm.den = d1*d2;
+  fm.num = (n1*d2)+(n2*d1);
+ /*  fm.den = f[1].den*(f[2].den);
+  fm.num = ((f[1].num*(f[2].den))+(f[2].num*(f[1].den)));	*/
   return fm;
  }
 
