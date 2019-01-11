@@ -3,9 +3,9 @@
 int input(int a[], int* n)
  {
   int i;  
-  printf("Enter the number of numbers");
-  scanf("%d",*&n);
-  printf("\nEnter the numbers");
+  printf("Enter the number of numbers: ");
+  scanf("%d",n);
+  printf("\nEnter the numbers\n");
   for(i=0;i<*n;i++)
    {
     scanf("%d",&a[i]);
@@ -15,23 +15,22 @@ int input(int a[], int* n)
 
 int compute(int a[],int* n)
  {
-  int sum,i;
+  int sum=0,i;
   for(i=0;i<*n;i++)
    sum+=a[i];
   return sum;
  }
 
-int output(int sum) 
+void output(int sum) 
  {
   printf("The sum of the entered numbers is: %d\n",sum);
-  return 0;
  }
 
 int main(void)
  {
   int a[100],n,sum;
-  input(&a,&n);
-  sum=compute(&a,&n);
+  input(a,&n);
+  sum=compute(a,&n);
   output(sum);
   return 0;
  }
