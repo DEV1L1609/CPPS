@@ -1,33 +1,36 @@
 #include<stdio.h>
 
-int input(int* a,int* b)
+int input(int a[], int* n)
  {
-  printf("Enter two numbers:\n");
-   scanf("%d\n%d",*&a,*&b);
+  int i;  
+  printf("Enter the number of numbers: ");
+  scanf("%d",n);
+  printf("\nEnter the numbers\n");
+  for(i=0;i<*n;i++)
+   {
+    scanf("%d",&a[i]);
+   }
   return 0;
- } 
+ }
 
-int compute(int* a,int* b)
+int compute(int a[],int* n)
  {
-  int sum;
-  sum = *a + *b;
+  int sum=0,i;
+  for(i=0;i<*n;i++)
+   sum+=a[i];
   return sum;
  }
- 
-int output(int sum)
+
+void output(int sum) 
  {
-  printf("The sum of the numbers are: %d",sum);
-  return 0;
+  printf("The sum of the entered numbers is: %d\n",sum);
  }
 
-int main(void) 
+int main(void)
  {
-  int a,b,sum;
-  input(&a,&b);
-  sum = compute(&a,&b);
+  int a[100],n,sum;
+  input(a,&n);
+  sum=compute(a,&n);
   output(sum);
   return 0;
  }
-
-  
-  
