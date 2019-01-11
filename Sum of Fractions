@@ -8,13 +8,13 @@ typedef struct {
 int input(frac* f)
  {
   printf("Enter the numerator of the first fraction");
-  scanf("%d\n",&f[1].num);
-  printf("Enter the denominator of the first fraction");
-  scanf("%d\n",&f[1].den);
-  printf("Enter the numerator of the second fraction");
-  scanf("%d\n",&f[2].num);
-  printf("Enter the denominator of the second fraction");
-  scanf("%d\n",&f[2].num);
+  scanf("%d",&f[1].num);
+  printf("\nEnter the denominator of the first fraction");
+  scanf("%d",&f[1].den);
+  printf("\nEnter the numerator of the second fraction");
+  scanf("%d",&f[2].num);
+  printf("\nEnter the denominator of the second fraction");
+  scanf("%d",&f[2].num);
  }
 
 frac compute(frac* f)
@@ -27,7 +27,7 @@ frac compute(frac* f)
 
 int output(frac fm)
  {
-  printf("The sum of the fractions is: %d/%d",fm.num,fm.den);
+  printf("The sum of the fractions is: %d/%d\n",fm.num,fm.den);
   return 0;
  }
 
