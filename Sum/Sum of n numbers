@@ -30,7 +30,7 @@ int main(void)
  {
   int a[100],n,sum;
   input(a,&n);
-  sum=compute(a,&n);
+  sum=compute(a,n);
   output(sum);
   return 0;
  }
