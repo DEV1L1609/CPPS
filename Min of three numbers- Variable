@@ -1,0 +1,36 @@
+#include<stdio.h>
+
+int input(int* a,int* b,int* c)
+ {
+  printf("Enter the numbers:\n");
+  scanf("%d\n%d\n%d",*&a,*&b,*&c);
+  return 0;
+ }
+
+int check_min(int a,int b,int c)
+ {
+  int min;
+  min = a;
+  if(b<a)
+   if(b<c)
+    min = b;
+  if(c<a)
+   if(c<b)
+    min = c;
+  return min;
+ }
+
+int output(int min)
+ {  
+  printf("The minimum number is: %d\n",min);
+  return 0;
+ }
+
+int main()
+ {
+  int a,b,c,min;
+  input(&a,&b,&c);
+  min=check_min(a,b,c);
+  output(min);
+  return 0;
+ }
