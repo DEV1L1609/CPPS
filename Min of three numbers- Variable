@@ -14,24 +14,19 @@ int check_min(int a,int b,int c)
   if(b<min)
    {
     min = b;
-    if(min<c)
-    return min;
+    if(min<c);
     else
      {
        min = c;
-       return min;
      }
    }
   else
    {
-    if(min<c)
-     return min;
-    else
-      {
+    if(min<c);
+    else     
        min = c;   
-       return min;
-      }
-    }
+   }
+  return min;
  }
 
 int output(int min)
