@@ -11,13 +11,27 @@ int check_min(int a,int b,int c)
  {
   int min;
   min = a;
-  if(b<a)
-   if(b<c)
+  if(b<min)
+   {
     min = b;
-  if(c<a)
-   if(c<b)
-    min = c;
-  return min;
+    if(min<c)
+    return min;
+    else
+     {
+       min = c;
+       return min;
+     }
+   }
+  else
+   {
+    if(min<c)
+     return min;
+    else
+      {
+       min = c;   
+       return min;
+      }
+    }
  }
 
 int output(int min)
