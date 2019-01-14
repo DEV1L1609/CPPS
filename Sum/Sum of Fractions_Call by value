@@ -20,8 +20,8 @@ int input(struct fraction *f1,struct fraction *f2)
 
 int sum_of_fractions(struct fraction *result,struct fraction f1,struct fraction f2)
  {
-  *&result->den = (f1.den)*(f2.den);
-  *&result->num = ((f1.num)*(f2.den))+((f1.den)*(f2.num));
+  result->den = (f1.den)*(f2.den);
+  result->num = ((f1.num)*(f2.den))+((f1.den)*(f2.num));
   return 0;
  }
 
