@@ -32,8 +32,8 @@ frac sum_of_fractions(frac* f,int n)
       if(i!=j)
        temp*=f[j].den;
      }
-    if(i>0)
     result.num+=(temp*(f[i].num));
+    temp=1;
    }
   return result;
  }
@@ -56,15 +56,4 @@ int main()
   result=sum_of_fractions(f,n);
   output(f,result,n);
   return 0;
- }
-   
-  
-
-
-
-
-
-
-
-
-
+}
