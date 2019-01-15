@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<math.h>
 void getnandx(int *n,int* x)
  {
   printf("Enter the number of terms:\n");
@@ -23,23 +24,22 @@ int indterm(int x,int n,int coeff[n], int ind[n])
   int i;
   for(i=0;i<n;i++)
    {
-    ind[i]=((coeff[i])*(x^i));
+    ind[i]=((coeff[i])*(pow(x,i)));
    }
   return 0; 
  }
 
-int sumind(int n,int ind[n])
+int sumind(int n,int ind[n],long long int* sum)
  {
   int i;
-  long long int sum;
   for(i=0;i<n;i++)
-   sum+=ind[i];
-  return sum;
+  (*sum)+=ind[i];
+  return 0;
  }
 
 int output(int sum)
  { 
-  printf("The sum of the polynomial is: %d",sum);
+  printf("The sum of the polynomial is: %d\n",sum);
   return 0;
  }
 
@@ -50,9 +50,8 @@ int main()
   int coeff[n],indiv[n];
   getcoeff(n,coeff);
   indterm(x,n,coeff,indiv);
-  int sum;
-  sum = sumind(n,indiv);
+  long long int sum=0;
+  sumind(n,indiv,&sum);
   output(sum);
   return 0;
  }
-  
