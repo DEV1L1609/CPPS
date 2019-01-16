@@ -1,0 +1,48 @@
+#include<stdio.h>
+
+void getnandx(int *n,int *x)
+ {
+  printf("Enter the number of terms:\n");
+  scanf("%d",n);
+  printf("Enter the value of x:\n");
+  scanf("%d",x);
+ }
+
+int getcoeff(int n,int coeff[n])
+ {
+  int i; 
+  printf("Enter the coefficients:\n");
+  for(i=0;i<n;i++)
+   scanf("%d",&coeff[i]);
+  return 0;
+ }
+ 
+int horner(int x,int n,int coeff[n])
+ {
+  int i,sum=coeff[n-1];
+  for(i=n-1;i>0;i--)
+   {
+    sum=sum*x;
+    sum+=coeff[i-1];
+   }
+  return sum;
+ }
+
+int output(int sum)
+ {
+  printf("The sum of the polynomial is: %d\n",sum);
+  return 0;
+ }
+ 
+int main()
+ {
+  int n,x;
+  getnandx(&n,&x);
+  int coeff[n];
+  getcoeff(n,coeff);
+  int sum=0;
+  sum=horner(x,n,coeff);
+  output(sum);
+  return 0;
+ }
+
