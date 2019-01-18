@@ -1,58 +1,70 @@
 #include<stdio.h>
-void getnandx(int *n,int* x)
+
+typedef struct fraction{
+	int num;
+	int den;
+}frac;
+
+void input(frac* f,int* n)
  {
-  printf("Enter the number of terms:\n");
+  int i;
+  printf("Enter the total number of fractions:\n");
   scanf("%d",n);
-  printf("Enter the value of x:\n");
-  scanf("%d",x);
+  printf("Enter the fractions:\n");
+  for(i=0;i<*n;i++)
+   {
+    scanf("%d/%d",&f[i].num,&f[i].den);
+   }
  }
 
-int getcoeff(int n, int coeff[n])
+frac sum_of_fractions(frac* f,int n)
  {
-  int  i;
-  printf("\nEnter the coefficients:\n");
+  frac result={0,1};
+  int i,j,temp=1;
   for(i=0;i<n;i++)
    {
-    scanf("%d",&coeff[i]);
+    (result.den)*=(f[i].den);
    }
-  return 0;
- }
-
-int indterm(int x,int n,int coeff[n], int ind[n])
- {
-  int i;
   for(i=0;i<n;i++)
    {
-    ind[i]=((coeff[i])*(x^i));
+    for(j=0;j<n;j++)
+     {
+      if(i!=j)
+       temp*=f[j].den;
+     }
+    if(i>0)
+    result.num+=(temp*(f[i].num));
    }
-  return 0; 
+  return result;
  }
 
-int sumind(int n,int ind[n],long long int* sum)
- {
-  int i;
-  //long long int sum;
-  for(i=0;i<n;i++)
-   sum+=ind[i];
-  return *sum;
- }
-
-int output(int sum)
+void output(frac* f,frac result,int n)
  { 
-  printf("The sum of the polynomial is: %d",sum);
-  return 0;
+  int i; 
+  for(i=0;i<n;i++) 
+   {
+    printf("%d/%d+",f[i].num,f[i].den);
+   }
+  printf("is: %d/%d\n",result.num,result.den);
  }
 
-int main()
+int main() 
  {
-  int n,x;
-  getnandx(&n,&x);
-  int coeff[n],indiv[n];
-  getcoeff(n,coeff);
-  indterm(x,n,coeff,indiv);
-  long long int sum;
-  sumind(n,indiv,&sum);
-  output(sum);
+  frac f[2],result;
+  int n;
+  input(f,&n);
+  result=sum_of_fractions(f,n);
+  output(f,result,n);
   return 0;
  }
+   
   
+
+
+
+
+
+
+
+
+
