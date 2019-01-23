@@ -50,7 +50,7 @@ void output(frac* f,frac result,int n)
 
 int main() 
  {
-  frac f[2],result;
+  frac f[100],result;
   int n;
   input(f,&n);
   result=sum_of_fractions(f,n);
